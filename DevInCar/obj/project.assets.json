@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Users\\agjr9\\OneDrive\\Documentos\\DEVinHouse\\Modulo-2\\PROJETOS\\Projeto 1 - DevInCar\\DevInCar\\DevInCar.csproj",
+      "projectUniqueName": "D:\\Users\\agjr9\\OneDrive\\Documentos\\DEVinHouse\\Modulo-2\\PROJETOS\\DevInCar\\DevInCar\\DevInCar\\DevInCar.csproj",
       "projectName": "DevInCar",
-      "projectPath": "D:\\Users\\agjr9\\OneDrive\\Documentos\\DEVinHouse\\Modulo-2\\PROJETOS\\Projeto 1 - DevInCar\\DevInCar\\DevInCar.csproj",
+      "projectPath": "D:\\Users\\agjr9\\OneDrive\\Documentos\\DEVinHouse\\Modulo-2\\PROJETOS\\DevInCar\\DevInCar\\DevInCar\\DevInCar.csproj",
       "packagesPath": "C:\\Users\\agjr9\\.nuget\\packages\\",
-      "outputPath": "D:\\Users\\agjr9\\OneDrive\\Documentos\\DEVinHouse\\Modulo-2\\PROJETOS\\Projeto 1 - DevInCar\\DevInCar\\obj\\",
+      "outputPath": "D:\\Users\\agjr9\\OneDrive\\Documentos\\DEVinHouse\\Modulo-2\\PROJETOS\\DevInCar\\DevInCar\\DevInCar\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\agjr9\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
