@@ -13,7 +13,7 @@ namespace DevInCar.Models
         public string Placa { get; private set; }
         public decimal Valor { get; protected set; }
         public ECores Cor { get; set; }
-        public DateTime DataFabricacao { get; set; }
+        public DateTime DataTransferencia { get; private set; }
         public string NumeroChassi { get; private set; }
         public string CpfComprador { get; private set; }
         public int Potencia { get; set; }
@@ -21,16 +21,33 @@ namespace DevInCar.Models
 
         public Veiculo(string nome,decimal valor,ECores cor,int potencia)
         {
+            
             Nome = nome;
             Valor = valor;
             Cor = cor;
             Potencia = potencia;
             VeiculoVendido = false;
             CpfComprador = "";
+            NumeroChassi =  GerarNumeroChassi();
+            DataTransferencia = DataRegistrada();
+        }
+        public Veiculo(string nome, decimal valor, ECores cor, int potencia,bool veiculoVendido)
+        {
+            Nome = nome;
+            Valor = valor;
+            Cor = cor;
+            Potencia = potencia;
+            VeiculoVendido = veiculoVendido;
+            CpfComprador = "";
+            NumeroChassi = GerarNumeroChassi();
+            DataTransferencia = DataRegistrada();
         }
 
         public void VenderVeiculo()
         {
+            if (VeiculoVendido == true)
+            Console.WriteLine("Error: O veiculo ja foi vendido");
+            else
             VeiculoVendido = true;
         }
 
@@ -43,6 +60,18 @@ namespace DevInCar.Models
         {
             return Cor = cor;
         }
+        public  decimal  AlterarValor(decimal valor)
+        {
+            if(Valor > 0)
+            {
+
+            return Valor = valor;
+            }
+            else
+            {
+                return Valor;
+            }
+        }
         private string GerarNumeroChassi()
         {
             Random random = new Random();
@@ -54,5 +83,17 @@ namespace DevInCar.Models
                 .ToArray()
                 );
         }
+
+        private DateTime DataRegistrada()
+        {
+            Random random = new Random();
+            DateTime dataInicial = new DateTime(2018,1,1);
+            int tempoPercorrido = (DateTime.Today - dataInicial).Days;
+            return dataInicial.AddDays(random.Next(tempoPercorrido))
+                              .AddHours(random.Next(0, 24))
+                              .AddMinutes(random.Next(0, 60));
+        }
+
+        
     }
 }

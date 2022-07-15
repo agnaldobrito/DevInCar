@@ -11,16 +11,37 @@ namespace DevInCar.Models
     {
         public decimal CapacidadeCarga { get; set; }
         public int TotalPortas { get; set; }
+        public ECombustiveis TipoCombustivel { get; set; }
 
         public Caminhonete(
 
-            decimal capacidadeCarga, int totalPortas,
+            decimal capacidadeCarga, int totalPortas,ECombustiveis tipoCombustivel,
             string nome, decimal valor, ECores cor, int potencia
 
             ) : base(nome,valor,cor,potencia)
         {
             CapacidadeCarga = capacidadeCarga;
             TotalPortas = totalPortas;
+            if(tipoCombustivel != ECombustiveis.Flex)
+            {
+            TipoCombustivel = tipoCombustivel;
+            }
+        }
+
+        public Caminhonete(
+
+            decimal capacidadeCarga, int totalPortas, ECombustiveis tipoCombustivel,
+            string nome, decimal valor, ECores cor, int potencia,
+            bool veiculoVendido
+
+            ) : base(nome, valor, cor, potencia, veiculoVendido)
+        {
+            CapacidadeCarga = capacidadeCarga;
+            TotalPortas = totalPortas;
+            if (tipoCombustivel != ECombustiveis.Flex)
+            {
+                TipoCombustivel = tipoCombustivel;
+            }
         }
 
         public override ECores AlterarCor(ECores cor)

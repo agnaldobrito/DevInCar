@@ -18,6 +18,16 @@ namespace DevInCar.Models
         {
             TotalRodas = totalRodas;
         }
+        public MotoTriciclo(
+
+            int totalRodas,
+            string nome, decimal valor, ECores cor, int potencia,
+            bool veiculoVendido
+
+            ) : base(nome, valor, cor, potencia, veiculoVendido)
+        {
+            TotalRodas = totalRodas;
+        }
 
     }
 }
