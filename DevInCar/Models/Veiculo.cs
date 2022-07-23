@@ -66,7 +66,8 @@ namespace DevInCar.Models
         {
             if (VeiculoVendido == false)
             {
-                return $"Nome: {Nome}\nPlaca: {Placa}\nCor: {Cor}\nData de fabricação: {DataFabricacao}\n";
+                return $"Nome: {Nome}\nPlaca: {Placa}\nCor: {Cor}\nData de fabricação: {DataFabricacao}\n"+
+                       $"\n------------------\n";
 
             }
             else
@@ -74,7 +75,8 @@ namespace DevInCar.Models
                 return $"Nome: {Nome}\nPlaca: {Placa}\nCor: {Cor}\nData de fabricação: {DataFabricacao}\n" +
                        $"Cpf do comprador: {CpfComprador}\n" +
                        $"Valor: {Valor}\n" +
-                       $"Data da compra : {DataCompra}\n";
+                       $"Data da compra : {DataCompra}\n"+
+                       $"\n------------------\n";
             }
         }
 
