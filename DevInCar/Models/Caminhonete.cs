@@ -13,29 +13,17 @@ namespace DevInCar.Models
         public int TotalPortas { get; set; }
         public ECombustiveis TipoCombustivel { get; set; }
 
-        public Caminhonete(
-
-            decimal capacidadeCarga, int totalPortas,ECombustiveis tipoCombustivel,
-            string nome, decimal valor, ECores cor, int potencia
-
-            ) : base(nome,valor,cor,potencia)
-        {
-            CapacidadeCarga = capacidadeCarga;
-            TotalPortas = totalPortas;
-            if(tipoCombustivel != ECombustiveis.Flex)
-            {
-            TipoCombustivel = tipoCombustivel;
-            }
-        }
+        
 
         public Caminhonete(
 
             decimal capacidadeCarga, int totalPortas, ECombustiveis tipoCombustivel,
-            string nome, decimal valor, ECores cor, int potencia,
-            bool veiculoVendido
+            string nome, double valor, ECores cor, int potencia, bool veiculoVendido
 
             ) : base(nome, valor, cor, potencia, veiculoVendido)
         {
+            TipoVeiculo = EOpcoesVeiculos.Caminhonetes;
+            Cor = ECores.Roxo;
             CapacidadeCarga = capacidadeCarga;
             TotalPortas = totalPortas;
             if (tipoCombustivel != ECombustiveis.Flex)

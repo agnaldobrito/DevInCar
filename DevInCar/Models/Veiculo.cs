@@ -4,96 +4,116 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DevInCar.Enums;
-
+using DevInCar.Services;
 namespace DevInCar.Models
 {
     public abstract class Veiculo
     {
-        public string Nome { get; protected set; }
+        public EOpcoesVeiculos TipoVeiculo { get; set; }
+        public string Nome { get; private set; }
         public string Placa { get; private set; }
-        public decimal Valor { get; protected set; }
-        public ECores Cor { get; set; }
-        public DateTime DataTransferencia { get; private set; }
+        public double Valor { get; protected set; }
+        public ECores Cor { get; protected set; }
+        public DateTime DataFabricacao { get; private set; }
+        public DateTime DataCompra { get; private set; }
         public string NumeroChassi { get; private set; }
         public string CpfComprador { get; private set; }
-        public int Potencia { get; set; }
-        public bool VeiculoVendido { get; set; }
+        public int Potencia { get; private set; }
+        public bool VeiculoVendido { get; private set; }
 
-        public Veiculo(string nome,decimal valor,ECores cor,int potencia)
+
+        public Veiculo(string nome, double valor, ECores cor, int potencia, bool veiculoVendido)
         {
-            
-            Nome = nome;
-            Valor = valor;
-            Cor = cor;
-            Potencia = potencia;
-            VeiculoVendido = false;
-            CpfComprador = "";
-            NumeroChassi =  GerarNumeroChassi();
-            DataTransferencia = DataRegistrada();
-        }
-        public Veiculo(string nome, decimal valor, ECores cor, int potencia,bool veiculoVendido)
-        {
+
             Nome = nome;
             Valor = valor;
             Cor = cor;
             Potencia = potencia;
             VeiculoVendido = veiculoVendido;
-            CpfComprador = "";
-            NumeroChassi = GerarNumeroChassi();
-            DataTransferencia = DataRegistrada();
+            CpfComprador = "0";
+
+            if (veiculoVendido == true)
+            {
+                Random random = new Random();
+                CpfComprador = CapturarCpfComprador();
+                DataCompra = DateTime.Now;
+            }
+
+            Placa = CapturarPlacaVeiculo();
+            NumeroChassi = CapturarNumeroChassi();
+            DataFabricacao = CapturarDataHora();
         }
 
         public void VenderVeiculo()
         {
+            Random random = new Random();
             if (VeiculoVendido == true)
-            Console.WriteLine("Error: O veiculo ja foi vendido");
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n --> ERROR: O veiculo ja foi vendido\n\n");
+                Console.ForegroundColor = ConsoleColor.White;
+            }
             else
-            VeiculoVendido = true;
+            {
+                VeiculoVendido = true;
+                CpfComprador = CapturarCpfComprador();
+                DataCompra = DateTime.Now;
+
+            }
         }
 
-        public void ListarInfo()
+        public string ListarInfo()
         {
+            if (VeiculoVendido == false)
+            {
+                return $"Nome: {Nome}\nPlaca: {Placa}\nCor: {Cor}\nData de fabricação: {DataFabricacao}\n";
 
+            }
+            else
+            {
+                return $"Nome: {Nome}\nPlaca: {Placa}\nCor: {Cor}\nData de fabricação: {DataFabricacao}\n" +
+                       $"Cpf do comprador: {CpfComprador}\n" +
+                       $"Valor: {Valor}\n" +
+                       $"Data da compra : {DataCompra}\n";
+            }
         }
 
         public virtual ECores AlterarCor(ECores cor)
         {
             return Cor = cor;
         }
-        public  decimal  AlterarValor(decimal valor)
+        public double AlterarValor(double valor)
         {
-            if(Valor > 0)
+            if (Valor > 0)
             {
-
-            return Valor = valor;
+                return Valor = valor;
             }
             else
             {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n --> ERROR: O valor não pode ser nulo\n\n");
+                Console.ForegroundColor = ConsoleColor.White;
                 return Valor;
             }
         }
-        private string GerarNumeroChassi()
+
+        private string CapturarNumeroChassi()
         {
-            Random random = new Random();
-            string digitosPossiveis = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            return new string(
-                Enumerable.Repeat(digitosPossiveis, 17)
-                .Select(digito =>
-                digito[random.Next(digito.Length)])
-                .ToArray()
-                );
+            return GeradorNumeroChassi.GerarNumeroChassi();
+
+        }
+        private string CapturarCpfComprador()
+        {
+            return GeradorCpf.GerarCpf();
+        }
+        private DateTime CapturarDataHora()
+        {
+            return GeradorDeData.GerarData();
+        }
+        private string CapturarPlacaVeiculo()
+        {
+            return GeradorPlaca.GerarPlaca();
         }
 
-        private DateTime DataRegistrada()
-        {
-            Random random = new Random();
-            DateTime dataInicial = new DateTime(2018,1,1);
-            int tempoPercorrido = (DateTime.Today - dataInicial).Days;
-            return dataInicial.AddDays(random.Next(tempoPercorrido))
-                              .AddHours(random.Next(0, 24))
-                              .AddMinutes(random.Next(0, 60));
-        }
-
-        
     }
 }

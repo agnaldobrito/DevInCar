@@ -11,33 +11,25 @@ namespace DevInCar.Models
         public int TotalPortas { get; set; }
         public ECombustiveis TipoCombustivel { get; set; }
 
-        public Carro(
-
-            int totalPortas, ECombustiveis tipoCombustivel,
-            string nome, decimal valor, ECores cor, int potencia
-
-            ) : base(nome,valor,cor,potencia)
-        {
-            TotalPortas = totalPortas;
-            if(tipoCombustivel != ECombustiveis.Diesel)
-            {
-            TipoCombustivel = tipoCombustivel;
-
-            }
-        }
+        
 
         public Carro(
 
             int totalPortas, ECombustiveis tipoCombustivel,
-            string nome, decimal valor, ECores cor, int potencia,
-            bool veiculoVendido
+            string nome, double valor, ECores cor, int potencia, bool veiculoVendido
 
             ) : base(nome, valor, cor, potencia,veiculoVendido)
         {
+            TipoVeiculo = EOpcoesVeiculos.Carros;
             TotalPortas = totalPortas;
+
             if (tipoCombustivel != ECombustiveis.Diesel)
             {
                 TipoCombustivel = tipoCombustivel;
+
+            }
+            else
+            {
 
             }
         }
