@@ -28,10 +28,6 @@ namespace DevInCar.Models
                 TipoCombustivel = tipoCombustivel;
 
             }
-            else
-            {
-
-            }
         }
 
 

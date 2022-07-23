@@ -1,0 +1,15 @@
+D:\Users\agjr9\OneDrive\Documentos\DEVinHouse\Modulo-2\PROJETOS\DevInCar\DevInCar\DevInCar\bin\Debug\net6.0\DevInCar.exe
+D:\Users\agjr9\OneDrive\Documentos\DEVinHouse\Modulo-2\PROJETOS\DevInCar\DevInCar\DevInCar\bin\Debug\net6.0\DevInCar.deps.json
+D:\Users\agjr9\OneDrive\Documentos\DEVinHouse\Modulo-2\PROJETOS\DevInCar\DevInCar\DevInCar\bin\Debug\net6.0\DevInCar.runtimeconfig.json
+D:\Users\agjr9\OneDrive\Documentos\DEVinHouse\Modulo-2\PROJETOS\DevInCar\DevInCar\DevInCar\bin\Debug\net6.0\DevInCar.dll
+D:\Users\agjr9\OneDrive\Documentos\DEVinHouse\Modulo-2\PROJETOS\DevInCar\DevInCar\DevInCar\bin\Debug\net6.0\DevInCar.pdb
+D:\Users\agjr9\OneDrive\Documentos\DEVinHouse\Modulo-2\PROJETOS\DevInCar\DevInCar\DevInCar\obj\Debug\net6.0\DevInCar.csproj.AssemblyReference.cache
+D:\Users\agjr9\OneDrive\Documentos\DEVinHouse\Modulo-2\PROJETOS\DevInCar\DevInCar\DevInCar\obj\Debug\net6.0\DevInCar.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\agjr9\OneDrive\Documentos\DEVinHouse\Modulo-2\PROJETOS\DevInCar\DevInCar\DevInCar\obj\Debug\net6.0\DevInCar.AssemblyInfoInputs.cache
+D:\Users\agjr9\OneDrive\Documentos\DEVinHouse\Modulo-2\PROJETOS\DevInCar\DevInCar\DevInCar\obj\Debug\net6.0\DevInCar.AssemblyInfo.cs
+D:\Users\agjr9\OneDrive\Documentos\DEVinHouse\Modulo-2\PROJETOS\DevInCar\DevInCar\DevInCar\obj\Debug\net6.0\DevInCar.csproj.CoreCompileInputs.cache
+D:\Users\agjr9\OneDrive\Documentos\DEVinHouse\Modulo-2\PROJETOS\DevInCar\DevInCar\DevInCar\obj\Debug\net6.0\DevInCar.dll
+D:\Users\agjr9\OneDrive\Documentos\DEVinHouse\Modulo-2\PROJETOS\DevInCar\DevInCar\DevInCar\obj\Debug\net6.0\refint\DevInCar.dll
+D:\Users\agjr9\OneDrive\Documentos\DEVinHouse\Modulo-2\PROJETOS\DevInCar\DevInCar\DevInCar\obj\Debug\net6.0\DevInCar.pdb
+D:\Users\agjr9\OneDrive\Documentos\DEVinHouse\Modulo-2\PROJETOS\DevInCar\DevInCar\DevInCar\obj\Debug\net6.0\DevInCar.genruntimeconfig.cache
+D:\Users\agjr9\OneDrive\Documentos\DEVinHouse\Modulo-2\PROJETOS\DevInCar\DevInCar\DevInCar\obj\Debug\net6.0\ref\DevInCar.dll

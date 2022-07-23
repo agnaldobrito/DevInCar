@@ -9,11 +9,14 @@ Console.WriteLine(" ===== Bem vind ao DevInCar =====\n\n");
 
 while (true)
 {
-
+    Console.WriteLine("Selecione o tipo do veículo\n");
+    Console.ForegroundColor = ConsoleColor.Yellow;
     MenuTipoVeiculo.ExibirMenuTipoVeiculo();
+    Console.ForegroundColor = ConsoleColor.White;
+
 
     bool opcaoValida = int.TryParse(Console.ReadLine(), out int opcaoSelecionada);
-    Console.WriteLine("----------------------------------");
+    Console.WriteLine("----------------------------------\n");
     if (!opcaoValida || opcaoSelecionada < 1 || opcaoSelecionada > 4)
     {
         Console.ForegroundColor = ConsoleColor.Red;
@@ -22,13 +25,17 @@ while (true)
         continue;
     }
 
+
     switch (opcaoSelecionada)
     {
         case (int)EOpcoesVeiculos.MotosOuTriciclos:
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Yellow;
             MenuVeiculoOpcoesInfo.MostrarMenuMotoTriciclo();
+            Console.ForegroundColor = ConsoleColor.White;
 
             bool motoOpcaoInfoValida = int.TryParse(Console.ReadLine(), out int motoOpcaoInfoSelecionada);
-            if (!motoOpcaoInfoValida || motoOpcaoInfoSelecionada < 1 || motoOpcaoInfoSelecionada > 4)
+            if (!motoOpcaoInfoValida || motoOpcaoInfoSelecionada < 1 || motoOpcaoInfoSelecionada > 5)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("\n --> ERROR: Opção inválida\n\n");
@@ -43,10 +50,13 @@ while (true)
             break;
 
         case (int)EOpcoesVeiculos.Carros:
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Yellow;
             MenuVeiculoOpcoesInfo.MostrarMenuCarros();
+            Console.ForegroundColor = ConsoleColor.White;
 
             bool carroOpcaoInfoValida = int.TryParse(Console.ReadLine(), out int carroOpcaoInfoSelecionada);
-            if (!carroOpcaoInfoValida || carroOpcaoInfoSelecionada < 1 || carroOpcaoInfoSelecionada > 4)
+            if (!carroOpcaoInfoValida || carroOpcaoInfoSelecionada < 1 || carroOpcaoInfoSelecionada > 5)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("\n --> ERROR: Opção inválida\n\n");
@@ -60,10 +70,13 @@ while (true)
             break;
 
         case (int)EOpcoesVeiculos.Caminhonetes:
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Yellow;
             MenuVeiculoOpcoesInfo.MostrarMenuCaminhonetes();
+            Console.ForegroundColor = ConsoleColor.White;
 
             bool caminhoneteOpcaoInfoValida = int.TryParse(Console.ReadLine(), out int caminhoneteOpcaoInfoSelecionada);
-            if (!caminhoneteOpcaoInfoValida || caminhoneteOpcaoInfoSelecionada < 1 || caminhoneteOpcaoInfoSelecionada > 4)
+            if (!caminhoneteOpcaoInfoValida || caminhoneteOpcaoInfoSelecionada < 1 || caminhoneteOpcaoInfoSelecionada > 5)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("\n --> ERROR: Opção inválida\n\n");
@@ -77,6 +90,7 @@ while (true)
             break;
 
         case (int)EOpcoesVeiculos.Todos:
+            Console.Clear();
             MenuVeiculoOpcoesInfo.MostrarMenuTodosVeiculos();
 
             Console.WriteLine("\n==================================\n");
