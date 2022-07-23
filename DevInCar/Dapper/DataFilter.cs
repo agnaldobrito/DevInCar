@@ -135,7 +135,7 @@ namespace DevInCar.Dapper
                     veiculo.TipoVeiculo.Equals(EOpcoesVeiculos.Carros)
                     && veiculo.VeiculoVendido == true);
 
-                var maiorPreco = carros.OrderBy(maisCaro => maisCaro.Valor).First();
+                var maiorPreco = carros.OrderByDescending(maisCaro => maisCaro.Valor).First();
 
                 Console.WriteLine(maiorPreco.ListarInfo());
 
@@ -152,7 +152,7 @@ namespace DevInCar.Dapper
                     veiculo.TipoVeiculo.Equals(EOpcoesVeiculos.Carros)
                     && veiculo.VeiculoVendido == true);
 
-                var menorPreco = carros.OrderByDescending(maisBarato => maisBarato.Valor).First();
+                var menorPreco = carros.OrderBy(maisBarato => maisBarato.Valor).First();
 
                 Console.WriteLine(menorPreco.ListarInfo());
 
@@ -212,7 +212,7 @@ namespace DevInCar.Dapper
                     veiculo.TipoVeiculo.Equals(EOpcoesVeiculos.Caminhonetes)
                     && veiculo.VeiculoVendido == true);
 
-                var maiorPreco = caminhonetes.OrderBy(maisCaro => maisCaro.Valor).First();
+                var maiorPreco = caminhonetes.OrderByDescending(maisCaro => maisCaro.Valor).First();
 
                 Console.WriteLine(maiorPreco.ListarInfo());
 
@@ -229,7 +229,7 @@ namespace DevInCar.Dapper
                     veiculo.TipoVeiculo.Equals(EOpcoesVeiculos.Caminhonetes)
                     && veiculo.VeiculoVendido == true);
 
-                var menorPreco = caminhonetes.OrderByDescending(maisBarato => maisBarato.Valor).First();
+                var menorPreco = caminhonetes.OrderBy(maisBarato => maisBarato.Valor).First();
 
                 Console.WriteLine(menorPreco.ListarInfo());
 
