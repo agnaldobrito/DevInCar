@@ -1,11 +1,96 @@
 ﻿using DevInCar.Models;
 using DevInCar.Enums;
+using DevInCar.Menu;
+using DevInCar.Dapper;
 
-List<Carro> carros = new()
+
+
+Console.WriteLine(" ===== Bem vind ao DevInCar =====\n\n");
+
+while (true)
 {
-    new Carro ( totalPortas: 4,tipoCombustivel: ECombustiveis.Flex, nome: "Toyota - Etios",
-                valor: 69.999m, cor: ECores.Preto, potencia: 92 ),
-    new Carro ( 2, ECombustiveis.Gasolina, "Mazda - RX7", 189.999m, ECores.Vermelho, 143 ),
-    new Carro ( 2, ECombustiveis.Gasolina, "Nissan - NSX 2000", 210.000m, ECores.Azul, 273 ),
-    new Carro ( 2, ECombustiveis.Gasolina, "Mitsubishi - Lancer EVO V", 215.999m, ECores.Branco, 298 )
-};
+
+    MenuTipoVeiculo.ExibirMenuTipoVeiculo();
+
+    bool opcaoValida = int.TryParse(Console.ReadLine(), out int opcaoSelecionada);
+    Console.WriteLine("----------------------------------");
+    if (!opcaoValida || opcaoSelecionada < 1 || opcaoSelecionada > 4)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("\n ==== ERROR: Opção inválida ====\n\n");
+        Console.ForegroundColor = ConsoleColor.White;
+        continue;
+    }
+
+    switch (opcaoSelecionada)
+    {
+        case (int)EOpcoesVeiculos.MotosOuTriciclos:
+            MenuVeiculoOpcoesInfo.MostrarMenuMotoTriciclo();
+
+            bool motoOpcaoInfoValida = int.TryParse(Console.ReadLine(), out int motoOpcaoInfoSelecionada);
+            if (!motoOpcaoInfoValida || motoOpcaoInfoSelecionada < 1 || motoOpcaoInfoSelecionada > 4)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n --> ERROR: Opção inválida\n\n");
+                Console.ForegroundColor = ConsoleColor.White;
+                continue;
+            }
+            Console.WriteLine("\n==================================\n");
+            DataFilter.FiltrarMotos(motoOpcaoInfoSelecionada);
+            Console.WriteLine("\n==================================\n");
+
+
+            break;
+
+        case (int)EOpcoesVeiculos.Carros:
+            MenuVeiculoOpcoesInfo.MostrarMenuCarros();
+
+            bool carroOpcaoInfoValida = int.TryParse(Console.ReadLine(), out int carroOpcaoInfoSelecionada);
+            if (!carroOpcaoInfoValida || carroOpcaoInfoSelecionada < 1 || carroOpcaoInfoSelecionada > 4)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n --> ERROR: Opção inválida\n\n");
+                Console.ForegroundColor = ConsoleColor.White;
+                continue;
+            }
+            Console.WriteLine("\n==================================\n");
+            DataFilter.FiltrarCarros(carroOpcaoInfoSelecionada);
+            Console.WriteLine("\n==================================\n");
+
+            break;
+
+        case (int)EOpcoesVeiculos.Caminhonetes:
+            MenuVeiculoOpcoesInfo.MostrarMenuCaminhonetes();
+
+            bool caminhoneteOpcaoInfoValida = int.TryParse(Console.ReadLine(), out int caminhoneteOpcaoInfoSelecionada);
+            if (!caminhoneteOpcaoInfoValida || caminhoneteOpcaoInfoSelecionada < 1 || caminhoneteOpcaoInfoSelecionada > 4)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n --> ERROR: Opção inválida\n\n");
+                Console.ForegroundColor = ConsoleColor.White;
+                continue;
+            }
+            Console.WriteLine("\n==================================\n");
+            DataFilter.FiltrarCaminhonetes(caminhoneteOpcaoInfoSelecionada);
+            Console.WriteLine("\n==================================\n");
+
+            break;
+
+        case (int)EOpcoesVeiculos.Todos:
+            MenuVeiculoOpcoesInfo.MostrarMenuTodosVeiculos();
+
+            Console.WriteLine("\n==================================\n");
+            foreach (var veiculo in Data.veiculos)
+            {
+                Console.WriteLine(veiculo.ListarInfo());
+            }
+            Console.WriteLine("\n==================================\n");
+
+            break;
+
+
+
+    }
+    
+
+}
