@@ -16,6 +16,12 @@ namespace DevInCar.Dapper
 
             if (opcao == 1)
             {
+                
+
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\nLista de motos ou triciclos disponíveis\n");
+                Console.ForegroundColor = ConsoleColor.White;
+
                 var motosOuTriciclos =
                 Data.veiculos.Where(
                     veiculo =>
@@ -29,6 +35,9 @@ namespace DevInCar.Dapper
             }
             if (opcao == 2)
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\nLista de motos ou triciclos vendidos\n");
+                Console.ForegroundColor = ConsoleColor.White;
                 var motosOuTriciclos =
                 Data.veiculos.Where(
                     veiculo =>
@@ -42,6 +51,9 @@ namespace DevInCar.Dapper
             }
             if (opcao == 3)
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\nMoto ou triciclo com o MAIOR preço\n");
+                Console.ForegroundColor = ConsoleColor.White;
                 var motosOuTriciclos =
                 Data.veiculos.Where(
                     veiculo =>
@@ -54,6 +66,10 @@ namespace DevInCar.Dapper
             }
             if (opcao == 4)
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\nMoto ou triciclo com o MENOR preço\n");
+                Console.ForegroundColor = ConsoleColor.White;
+
                 var motosOuTriciclos =
                 Data.veiculos.Where(
                     veiculo =>
@@ -64,12 +80,21 @@ namespace DevInCar.Dapper
 
                 Console.WriteLine(menorPreco.ListarInfo());
             }
+            if(opcao == 5)
+            {
+                Console.Clear();
+            }
+            
         }
         public static void FiltrarCarros(int opcao)
         {
 
             if (opcao == 1)
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\nLista de carros disponíveis\n");
+                Console.ForegroundColor = ConsoleColor.White;
+
                 var carros =
                 Data.veiculos.Where(
                     veiculo =>
@@ -83,6 +108,10 @@ namespace DevInCar.Dapper
             }
             if (opcao == 2)
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\nLista de carros vendidos\n");
+                Console.ForegroundColor = ConsoleColor.White;
+
                 var carros =
                 Data.veiculos.Where(
                     veiculo =>
@@ -96,6 +125,10 @@ namespace DevInCar.Dapper
             }
             if (opcao == 3)
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\nCarro com o MAIOR preço\n");
+                Console.ForegroundColor = ConsoleColor.White;
+
                 var carros =
                 Data.veiculos.Where(
                     veiculo =>
@@ -110,6 +143,9 @@ namespace DevInCar.Dapper
             }
             if (opcao == 4)
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\nCarro com o MENOR preço\n");
+                Console.ForegroundColor = ConsoleColor.White;
                 var carros =
                 Data.veiculos.Where(
                     veiculo =>
@@ -122,12 +158,20 @@ namespace DevInCar.Dapper
 
 
             }
+            if (opcao == 5)
+            {
+                Console.Clear();
+            }
         }
         public static void FiltrarCaminhonetes(int opcao)
         {
 
             if (opcao == 1)
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\nLista de caminhonetes disponíveis\n");
+                Console.ForegroundColor = ConsoleColor.White;
+
                 var caminhonetes =
                 Data.veiculos.Where(
                     veiculo =>
@@ -141,6 +185,10 @@ namespace DevInCar.Dapper
             }
             if (opcao == 2)
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\nLista de caminhonetes vendidas\n");
+                Console.ForegroundColor = ConsoleColor.White;
+
                 var caminhonetes =
                 Data.veiculos.Where(
                     veiculo =>
@@ -154,6 +202,10 @@ namespace DevInCar.Dapper
             }
             if (opcao == 3)
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\nCaminhonete com o MAIOR preço\n");
+                Console.ForegroundColor = ConsoleColor.White;
+
                 var caminhonetes =
                 Data.veiculos.Where(
                     veiculo =>
@@ -168,10 +220,13 @@ namespace DevInCar.Dapper
             }
             if (opcao == 4)
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("\nCaminhonete com o MENOR preço\n");
+                Console.ForegroundColor = ConsoleColor.White;
                 var caminhonetes =
                 Data.veiculos.Where(
                     veiculo =>
-                    veiculo.TipoVeiculo.Equals(EOpcoesVeiculos.Carros)
+                    veiculo.TipoVeiculo.Equals(EOpcoesVeiculos.Caminhonetes)
                     && veiculo.VeiculoVendido == true);
 
                 var menorPreco = caminhonetes.OrderByDescending(maisBarato => maisBarato.Valor).First();
@@ -179,6 +234,10 @@ namespace DevInCar.Dapper
                 Console.WriteLine(menorPreco.ListarInfo());
 
 
+            }
+            if (opcao == 5)
+            {
+                Console.Clear();
             }
         }
     }
